@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  
+  coursedb:
+   container_name: coursedb
+   ports:
+       - "1433:1433"
+   environment:
+       SA_PASSWORD: "Yasser_123"
+       ACCEPT_EULA: "Y"
+   volumes:
+     - coursedbsqldata:/var/opt/mssql
+
+  userdb:
+   container_name: userdb
+   ports:
+       - "1434:1433"
+   environment:
+       SA_PASSWORD: "Yasser_123"
+       ACCEPT_EULA: "Y"
+   volumes:
+     - userdbsqldata:/var/opt/mssql
+
+  course.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "90:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+  user.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+
+volumes:
+  coursedbsqldata:
+  userdbsqldata:
