@@ -63,15 +63,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMAPIGateway", "APIGateway\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CourseBasket", "CourseBasket", "{43C238BA-6FB1-4B1E-BCD1-BD1D84F7E190}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseBasket.API", "CourseBasket\src\CourseBasket.API\CourseBasket.API.csproj", "{9F0BCC50-6A5B-404F-A77A-F125174AA940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseBasket.API", "CourseBasket\src\CourseBasket.API\CourseBasket.API.csproj", "{9F0BCC50-6A5B-404F-A77A-F125174AA940}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A3D32576-FC59-4254-B7C7-4FAD91BE852A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseBasket.Application", "CourseBasket\src\CourseBasket.Application\CourseBasket.Application.csproj", "{AF45E69E-D5E8-4CB7-9310-84579B1BBA63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseBasket.Application", "CourseBasket\src\CourseBasket.Application\CourseBasket.Application.csproj", "{AF45E69E-D5E8-4CB7-9310-84579B1BBA63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseBasket.Domain", "CourseBasket\src\CourseBasket.Domain\CourseBasket.Domain.csproj", "{C911FB83-CADE-4518-96A5-0438B6B13E3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseBasket.Domain", "CourseBasket\src\CourseBasket.Domain\CourseBasket.Domain.csproj", "{C911FB83-CADE-4518-96A5-0438B6B13E3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseBasket.Persistence", "CourseBasket\src\CourseBasket.Persistence\CourseBasket.Persistence.csproj", "{BD66F910-8CFB-44A7-920E-98FEE88FBEA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseBasket.Persistence", "CourseBasket\src\CourseBasket.Persistence\CourseBasket.Persistence.csproj", "{BD66F910-8CFB-44A7-920E-98FEE88FBEA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StudentCourse", "StudentCourse", "{6B264280-0A1A-496B-B1EE-960601ACC25F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{C0683636-2C30-4090-86F5-0EFD92D93904}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B4CCB93D-C188-4D85-BC27-5152825915BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCourse.API", "StudentCourse\src\StudentCourse.API\StudentCourse.API.csproj", "{CCF0B1B8-0D4E-4A55-A505-4D612239C959}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCourse.Application", "StudentCourse\src\StudentCourse.Application\StudentCourse.Application.csproj", "{EF794F9A-2605-4BEB-9D63-70684F983478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCourse.Domain", "StudentCourse\src\StudentCourse.Domain\StudentCourse.Domain.csproj", "{411EC5D6-48E7-43AB-BA02-44F8F16B1D5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCourse.Persistence", "StudentCourse\src\StudentCourse.Persistence\StudentCourse.Persistence.csproj", "{926F5BBF-484F-42A7-82F3-AF499527C0B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +153,22 @@ Global
 		{BD66F910-8CFB-44A7-920E-98FEE88FBEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD66F910-8CFB-44A7-920E-98FEE88FBEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD66F910-8CFB-44A7-920E-98FEE88FBEA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF0B1B8-0D4E-4A55-A505-4D612239C959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF0B1B8-0D4E-4A55-A505-4D612239C959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF0B1B8-0D4E-4A55-A505-4D612239C959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF0B1B8-0D4E-4A55-A505-4D612239C959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF794F9A-2605-4BEB-9D63-70684F983478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF794F9A-2605-4BEB-9D63-70684F983478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF794F9A-2605-4BEB-9D63-70684F983478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF794F9A-2605-4BEB-9D63-70684F983478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411EC5D6-48E7-43AB-BA02-44F8F16B1D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411EC5D6-48E7-43AB-BA02-44F8F16B1D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411EC5D6-48E7-43AB-BA02-44F8F16B1D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411EC5D6-48E7-43AB-BA02-44F8F16B1D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926F5BBF-484F-42A7-82F3-AF499527C0B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926F5BBF-484F-42A7-82F3-AF499527C0B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926F5BBF-484F-42A7-82F3-AF499527C0B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926F5BBF-484F-42A7-82F3-AF499527C0B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +195,12 @@ Global
 		{AF45E69E-D5E8-4CB7-9310-84579B1BBA63} = {A3D32576-FC59-4254-B7C7-4FAD91BE852A}
 		{C911FB83-CADE-4518-96A5-0438B6B13E3F} = {A3D32576-FC59-4254-B7C7-4FAD91BE852A}
 		{BD66F910-8CFB-44A7-920E-98FEE88FBEA5} = {A3D32576-FC59-4254-B7C7-4FAD91BE852A}
+		{C0683636-2C30-4090-86F5-0EFD92D93904} = {6B264280-0A1A-496B-B1EE-960601ACC25F}
+		{B4CCB93D-C188-4D85-BC27-5152825915BB} = {6B264280-0A1A-496B-B1EE-960601ACC25F}
+		{CCF0B1B8-0D4E-4A55-A505-4D612239C959} = {B4CCB93D-C188-4D85-BC27-5152825915BB}
+		{EF794F9A-2605-4BEB-9D63-70684F983478} = {B4CCB93D-C188-4D85-BC27-5152825915BB}
+		{411EC5D6-48E7-43AB-BA02-44F8F16B1D5A} = {B4CCB93D-C188-4D85-BC27-5152825915BB}
+		{926F5BBF-484F-42A7-82F3-AF499527C0B2} = {B4CCB93D-C188-4D85-BC27-5152825915BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C816C0D-D4FD-4184-9A02-129E668C8DF6}
