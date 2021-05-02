@@ -8,7 +8,7 @@ USE [CourseManagement]
 CREATE TABLE [dbo].[Course](
 	[CourseID] [int] IDENTITY(1,1) NOT NULL,
 	[CourseName] [varchar](500) NOT NULL,
-	[CrouseShortName] [varchar](20) NULL,
+	[CourseShortName] [varchar](20) NULL,
 	[CreditHour] [decimal](18, 2) NOT NULL,
 	[DateAdded] [datetime] NULL,
 	[DateUpdated] [datetime] NULL,

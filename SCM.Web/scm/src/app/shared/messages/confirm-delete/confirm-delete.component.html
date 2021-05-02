@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header class="header">
+      <mat-card-title class="header_title"><i class="material-icons">delete</i> Verify one more time!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card_cntnt">
+      <div class="msg">
+        <p><i class="material-icons">live_help</i> Are you sure to delete the selected record?</p>
+      </div>
+      <hr>
+      <div class="footer">
+        <button mat-raised-button color="primary" [mat-dialog-close]="true" tabindex="2">Yes</button>
+        <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">No</button>
+      </div>
+    </mat-card-content>
+  </mat-card>

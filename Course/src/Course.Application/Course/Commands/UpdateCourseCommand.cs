@@ -12,7 +12,7 @@
     {
         public int CourseID { get; set; }
         public string CourseName { get; set; }
-        public string CrouseShortName { get; set; }
+        public string CourseShortName { get; set; }
         public int CreditHour { get; set; }
         public class UpdateUserHandler : ApplicationBase, IRequestHandler<UpdateCourseCommand, bool>
         {
@@ -30,7 +30,7 @@
                 }
 
                 user.CourseName = request.CourseName;
-                user.CrouseShortName = request.CrouseShortName;
+                user.CourseShortName = request.CourseShortName;
                 user.CreditHour = request.CreditHour;
                 this.UnitOfWork.StartTransaction();
                 var res = UnitOfWork.Users.UpdateCourse(user).Result;

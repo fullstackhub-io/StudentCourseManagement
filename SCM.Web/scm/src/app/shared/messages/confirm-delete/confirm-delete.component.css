@@ -1,0 +1,53 @@
+.header{
+    background: #E90C0C;
+    border-bottom: 5px solid #790606;
+    height: 50px;
+    padding-left: 5px;
+    }
+  
+    .header_title{
+        vertical-align:baseline;
+        padding-top: 10px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        font-size: 16pt;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba(255, 255, 255, 0.85);
+    }
+    mat-card{
+      margin: 0px;
+      padding: 0px;
+  
+    }
+    mat-card-content{
+      margin: 0px;
+      padding: 0px;
+   
+      height: 170px;
+      overflow:hidden;
+    }
+    
+  .mat-dialog-container {
+      padding: 0 !important;
+      margin: 0 !important;
+      }
+  
+  .frm-ctrl {
+      width: 100%;
+   }
+  
+   .card_cntnt
+   {
+       padding: 20px;
+   }
+   .msg
+   {
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       font-size: large;
+    padding-top: 10px;
+   }
+   .footer
+   {
+       padding-top: 10px;
+       text-align: center;
+   }

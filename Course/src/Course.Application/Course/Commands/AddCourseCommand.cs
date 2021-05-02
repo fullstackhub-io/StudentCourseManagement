@@ -12,7 +12,7 @@
     public class AddCourseCommand : IRequest<int>
     {
         public string CourseName { get; set; }
-        public string CrouseShortName { get; set; }
+        public string CourseShortName { get; set; }
         public int CreditHour { get; set; }
 
         public class AddNewUserHandler : ApplicationBase, IRequestHandler<AddCourseCommand, int>
@@ -27,7 +27,7 @@
                 var user = new Course
                 {
                     CourseName = request.CourseName,
-                    CrouseShortName = request.CrouseShortName,
+                    CourseShortName = request.CourseShortName,
                     CreditHour = request.CreditHour,
                 };
                 this.UnitOfWork.StartTransaction();
