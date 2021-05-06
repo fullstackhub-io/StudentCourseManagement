@@ -32,6 +32,7 @@ import { DataService } from './service/data/data.service';
     HttpClientModule
   ],
   providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ManageCourseComponent]
 })
 export class AppModule { }
