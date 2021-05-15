@@ -12,6 +12,8 @@ import { ManageUserComponent } from './admin/user/manage-user/manage-user.compon
 import { ConfirmDeleteComponent } from './shared/messages/confirm-delete/confirm-delete.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './service/data/data.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Util } from './shared/util';
 
 
 @NgModule({
@@ -29,9 +31,11 @@ import { DataService } from './service/data/data.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     SCMMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [DataService],
+  providers: [DataService,Util],
   bootstrap: [AppComponent],
   entryComponents: [ManageCourseComponent]
 })

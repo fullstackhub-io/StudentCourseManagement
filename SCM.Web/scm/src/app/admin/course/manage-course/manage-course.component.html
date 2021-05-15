@@ -1,1 +1,38 @@
-<p>manage-course works!</p>
+<mat-card>
+    <mat-card-header class="header">
+      <mat-card-title class="header_title"><i class="material-icons">book</i> {{modalTitle}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card_cntnt">
+      <div>
+        <form novalidate (ngSubmit)="onSubmit(courseFrm)" [formGroup]="courseFrm">
+          <div>
+            <mat-form-field class="frm-ctrl">
+              <input matInput placeholder="Course Name" formControlName="courseName">
+              <mat-error *ngIf="courseFrm.controls['courseName'].errors?.required">
+                  Menu Name is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="frm-ctrl">
+              <input matInput placeholder="Course Short Code" formControlName="courseShortName">
+              <mat-error *ngIf="courseFrm.controls['courseShortName'].errors?.required">
+                  Menu Code is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="frm-ctrl">
+              <input matInput placeholder="Credit Hour" formControlName="creditHour">
+              <mat-error *ngIf="courseFrm.controls['creditHour'].errors?.required">
+                  Menu Url is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="footer">
+            <button color="warn" type="button" mat-raised-button (click)="dialogRef.close()">Cancel</button>&nbsp;
+            <button type="submit" color="primary" [disabled]="courseFrm.invalid" mat-raised-button>{{modalBtnTitle}}</button></div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>

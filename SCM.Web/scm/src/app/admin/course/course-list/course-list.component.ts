@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { merge, Observable, of as observableOf } from 'rxjs';
 import { catchError, map, startWith, switchMap } from 'rxjs/operators';
+import { ICourse } from 'src/app/model/course';
 import { DataService } from 'src/app/service/data/data.service';
 import { DBOperation } from 'src/app/shared/enum';
 import { ManageCourseComponent } from '../manage-course/manage-course.component';
@@ -28,6 +29,7 @@ export class CourseListComponent implements OnInit {
   modalBtnTitle!: string;
   course:any;
 
+  GET_URL:string = "http://localhost:90/api/Course";
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -38,12 +40,15 @@ export class CourseListComponent implements OnInit {
 
 
   ngOnInit() {
+    this.loadData();
+  }
+  loadData() {
     this.filteredAndPagedIssues = merge()
       .pipe(
         startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this._dataService.get("http://localhost:90/api/Course");
+          return this._dataService.get(this.GET_URL);
         }),
         map(data => {
           // Flip flag to show that loading has finished.
@@ -83,23 +88,21 @@ export class CourseListComponent implements OnInit {
 
      addCourse() {
       this.dbops = DBOperation.create;
-      this.modalTitle = "Add New Menu";
+      this.modalTitle = "Add New Course";
       this.modalBtnTitle = "Add";
       this.openDialog();
     }
-     editCourse(course: any) {
+     editCourse(course: ICourse) {
       this.dbops = DBOperation.update;
-      this.modalTitle = "Edit Menu";
+      this.modalTitle = "Edit Course";
       this.modalBtnTitle = "Update";
-      delete course["__v"];
       this.course = course;
       this.openDialog();
     }
-     deleteCourse(course: any) {
+     deleteCourse(course: ICourse) {
       this.dbops = DBOperation.delete;
       this.modalTitle = "Confirm to Delete?";
       this.modalBtnTitle = "Delete";
-      delete course["__v"];
       this.course = course;
       this.openDialog();
     }
@@ -111,8 +114,8 @@ export class CourseListComponent implements OnInit {
       dialogRef.componentInstance.modalBtnTitle = this.modalBtnTitle;
       dialogRef.componentInstance.course = this.course;
   
-      dialogRef.afterClosed().subscribe(result => {
-        //this.loadData();
+      dialogRef.afterClosed().subscribe(() => {
+        this.loadData();
       });
     }
   }

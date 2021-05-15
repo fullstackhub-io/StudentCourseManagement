@@ -28,6 +28,5 @@ export class Util {
         return Object.keys(enumObj).map(function (type) {
           return enumObj[type];
         });
-      }
-      
+      }    
 }
