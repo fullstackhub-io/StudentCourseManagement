@@ -22,13 +22,13 @@
             return await this.Mediator.Send(new GetAllUserQuery());
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public async Task<ActionResult<int>> Post(AddUserCommand command)
         {
             return await this.Mediator.Send(command);
         }
 
-        [HttpPut("[action]")]
+        [HttpPut]
         public async Task<ActionResult<bool>> Put(UpdateUserCommand command)
         {
             return await this.Mediator.Send(command);

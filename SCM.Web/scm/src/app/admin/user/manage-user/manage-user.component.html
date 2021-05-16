@@ -1,1 +1,110 @@
-<p>manage-user works!</p>
+<mat-card>
+    <mat-card-header class="header">
+      <mat-card-title class="header_title"><i class="material-icons">emoji_people</i> {{modalTitle}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card_cntnt">
+      <div>
+        <form novalidate (ngSubmit)="onSubmit(userFrm)" [formGroup]="userFrm">
+            <div>
+                <mat-form-field class="frm-ctrl">
+                  <input matInput placeholder="First Name" formControlName="firstName">
+                  <mat-error *ngIf="userFrm.controls['firstName'].errors?.required">
+                      Menu Name is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="frm-ctrl">
+                  <input matInput placeholder="Last Name" formControlName="lastName">
+                  <mat-error *ngIf="userFrm.controls['lastName'].errors?.required">
+                      Menu Code is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-radio-group formControlName="gender">
+                  <mat-radio-button value='M'>Male</mat-radio-button>
+                  <mat-radio-button value='F'>Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="userFrm.controls['gender'].errors?.required">
+                  Gender is required!
+                </mat-error>
+              </div>
+              <div>
+                <mat-form-field class="frm-ctrl" appearance="fill">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker1"formControlName="dob">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                    <mat-error *ngIf="userFrm.controls['dob'].errors?.required">
+                        Menu Url is required!
+                    </mat-error>
+                  </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="frm-ctrl">
+                  <input matInput placeholder="Email Address" formControlName="emailAddress">
+                  <mat-error *ngIf="userFrm.controls['emailAddress'].errors?.required">
+                      Menu Url is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+               <div>
+                <mat-form-field class="frm-ctrl">
+                  <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+                  <mat-error *ngIf="userFrm.controls['phoneNumber'].errors?.required">
+                      Menu Url is required!
+                  </mat-error>
+                </mat-form-field>
+              </div> 
+              <div>
+                <mat-form-field class="frm-ctrl">
+                  <input matInput placeholder="City" formControlName="city">
+                  <mat-error *ngIf="userFrm.controls['city'].errors?.required">
+                      Menu Url is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="frm-ctrl">
+                  <mat-label>State</mat-label>
+                  <mat-select formControlName="state" name="state">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let state of states" [value]="state.value">
+                      {{ state.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="userFrm.controls['state'].errors?.required">
+                    State is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="frm-ctrl">
+                  <input matInput placeholder="Zip" formControlName="zip">
+                  <mat-error *ngIf="userFrm.controls['zip'].errors?.required">
+                      Menu Url is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="frm-ctrl">
+                  <mat-label>Country</mat-label>
+                  <mat-select formControlName="country" name="country">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let country of countries" [value]="country.value">
+                      {{ country.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="userFrm.controls['country'].errors?.required">
+                    Country is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+          <div class="footer">
+            <button color="warn" type="button" mat-raised-button (click)="dialogRef.close()">Cancel</button>&nbsp;
+            <button type="submit" color="primary" [disabled]="userFrm.invalid" mat-raised-button>{{modalBtnTitle}}</button></div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>

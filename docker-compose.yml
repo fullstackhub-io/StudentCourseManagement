@@ -23,3 +23,33 @@ services:
       context: .
       dockerfile: User/db/Dockerfile      
    
+  rabbitmq:
+        image: rabbitmq:3-management-alpine
+
+  basketdb:
+        image: redis
+
+  coursebasket.api:
+    image: ${DOCKER_REGISTRY-}coursebasketapi
+    build:
+      context: .
+      dockerfile: CourseBasket/Src/CourseBasket.API/Dockerfile
+
+  studentcourse.api:
+    image: ${DOCKER_REGISTRY-}studentcourseapi
+    build:
+      context: .
+      dockerfile: StudentCourse/Src/StudentCourse.API/Dockerfile
+
+  studentcoursedb:
+    build:
+      context: .
+      dockerfile: StudentCourse/db/Dockerfile
+
+  cmapigateway:
+    image: ${DOCKER_REGISTRY-}cmapigateway
+    build:
+      context: .
+      dockerfile: APIGateway/CMAPIGateway/Dockerfile
+
+

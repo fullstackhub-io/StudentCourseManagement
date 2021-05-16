@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path:'home',
-    component: CourseListComponent
+    component: UserListComponent
   },
   {
     path:'admin/managemenu',

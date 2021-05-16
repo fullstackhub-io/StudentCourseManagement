@@ -37,6 +37,6 @@ import { Util } from './shared/util';
   ],
   providers: [DataService,Util],
   bootstrap: [AppComponent],
-  entryComponents: [ManageCourseComponent]
+  entryComponents: [ManageCourseComponent,ManageUserComponent]
 })
 export class AppModule { }

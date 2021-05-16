@@ -38,6 +38,71 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
+  studentcoursedb:
+    container_name: studentcoursedb
+    ports:
+       - "1435:1433"
+    environment:
+       SA_PASSWORD: "Yasser_123"
+       ACCEPT_EULA: "Y"
+    volumes:
+     - studentcoursedbsqldata:/var/opt/mssql
+
+  basketdb:
+   container_name: basketdb
+   restart: always        
+   ports:
+       - "6379:6379"
+
+  rabbitmq:
+      container_name: rabbitmq
+      restart: always
+      ports:
+          - "5672:5672"
+          - "15672:15672"
+
+  studentcourse.api:
+    container_name: studentcourseapi
+    restart: on-failure
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:StudentCourseConnection=Server=studentcoursedb;Database=StudentCourses;User Id=sa;Password=Yasser_123"
+      - "EventBus:HostName=rabbitmq"
+    ports:
+      - "100:80"
+    depends_on:
+      - studentcoursedb
+      - rabbitmq
+   
+  cmapigateway:
+        container_name: cmapigateway
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        depends_on:
+            - course.api
+            - user.api
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+            - ${HOME}/.aspnet/https:/root/.aspnet/https:oc
+        ports:
+            - "110:80"
+
+  coursebasket.api:
+        container_name: coursebasketapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - "ConnectionStrings:Redis=basketdb:6379"
+            - "EventBus:HostName=rabbitmq"
+        depends_on:
+            - basketdb
+            - rabbitmq
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+            - ${HOME}/.aspnet/https:/root/.aspnet/https:bs
+        ports:
+            - "120:80"
+
 volumes:
   coursedbsqldata:
   userdbsqldata:
+  studentcoursedbsqldata:

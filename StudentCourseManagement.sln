@@ -76,6 +76,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StudentCourse", "StudentCourse", "{6B264280-0A1A-496B-B1EE-960601ACC25F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{C0683636-2C30-4090-86F5-0EFD92D93904}"
+	ProjectSection(SolutionItems) = preProject
+		StudentCourse\db\Dockerfile = StudentCourse\db\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B4CCB93D-C188-4D85-BC27-5152825915BB}"
 EndProject
@@ -135,6 +138,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "environments", "environment
 	ProjectSection(SolutionItems) = preProject
 		SCM.Web\scm\src\environments\environment.prod.ts = SCM.Web\scm\src\environments\environment.prod.ts
 		SCM.Web\scm\src\environments\environment.ts = SCM.Web\scm\src\environments\environment.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{3913605F-F195-4D35-8296-E0DB5EA89B76}"
+	ProjectSection(SolutionItems) = preProject
+		StudentCourse\db\data\entrypoint.sh = StudentCourse\db\data\entrypoint.sh
+		StudentCourse\db\data\SqlCmdStartup.sh = StudentCourse\db\data\SqlCmdStartup.sh
+		StudentCourse\db\data\studentcoursedb.sql = StudentCourse\db\data\studentcoursedb.sql
 	EndProjectSection
 EndProject
 Global
@@ -256,6 +266,7 @@ Global
 		{1EDBA917-08A7-45B9-9210-1BB959332DD9} = {D42A104E-846A-47EB-A18B-3B6C38054155}
 		{F9755E5A-D3F1-4F7B-80AE-E9563E1BD608} = {D42A104E-846A-47EB-A18B-3B6C38054155}
 		{56D25B04-AB07-4D10-9297-EAC2473D9F26} = {D42A104E-846A-47EB-A18B-3B6C38054155}
+		{3913605F-F195-4D35-8296-E0DB5EA89B76} = {C0683636-2C30-4090-86F5-0EFD92D93904}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C816C0D-D4FD-4184-9A02-129E668C8DF6}
