@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-header class="header">
+      <mat-card-title class="header_title"><i class="material-icons">book</i> Manage Course</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card_cntnt">
+      <div>
+        <form novalidate (ngSubmit)="onSubmit(selectCourse)" [formGroup]="selectCourse">
+          <div>
+            <mat-form-field class="frm-ctrl">
+                <mat-label>Select User</mat-label>
+                <mat-select formControlName="user" name="user">
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let user of users" [value]="user.userID">
+                    {{user.firstName}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="frm-ctrl">
+                <mat-label>Select Course</mat-label>
+                <mat-select formControlName="course" name="course" multiple>
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let course of courses" [value]="course.courseID">
+                    {{course.courseName}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="footer">
+            <button color="warn" type="button" mat-raised-button>Reset</button>&nbsp;
+            <button type="submit" color="primary" [disabled]="selectCourse.invalid" mat-raised-button>Add to Cart</button></div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>

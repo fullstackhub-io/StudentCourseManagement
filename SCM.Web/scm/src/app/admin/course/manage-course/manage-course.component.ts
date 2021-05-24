@@ -32,6 +32,7 @@ export class ManageCourseComponent implements OnInit {
       courseName: ['', [Validators.required, Validators.maxLength(50)]],
       courseShortName: ['', [Validators.required, Validators.maxLength(50)]],
       creditHour: [''],
+      price: [''],
       dateAdded: [''],
       dateUpdated: ['']
     });

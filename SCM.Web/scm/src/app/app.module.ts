@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './service/data/data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Util } from './shared/util';
+import { SelectCourseComponent } from './client/select-course/select-course.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { Util } from './shared/util';
     CourseListComponent,
     UserListComponent,
     ManageUserComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    SelectCourseComponent
   ],
   imports: [
     BrowserModule,

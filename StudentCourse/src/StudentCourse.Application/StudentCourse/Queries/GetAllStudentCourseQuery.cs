@@ -2,7 +2,6 @@
 {
     using AutoMapper;
     using MediatR;
-    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
     using StudentCourse.Application.Common.BaseClass;

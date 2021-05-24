@@ -29,6 +29,14 @@
               </mat-error>
             </mat-form-field>
           </div>
+          <div>
+            <mat-form-field class="frm-ctrl">
+              <input matInput placeholder="Course Price" formControlName="price">
+              <mat-error *ngIf="courseFrm.controls['price'].errors?.required">
+                  Menu Url is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
           <div class="footer">
             <button color="warn" type="button" mat-raised-button (click)="dialogRef.close()">Cancel</button>&nbsp;
             <button type="submit" color="primary" [disabled]="courseFrm.invalid" mat-raised-button>{{modalBtnTitle}}</button></div>

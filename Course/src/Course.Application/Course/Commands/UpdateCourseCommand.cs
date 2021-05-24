@@ -13,7 +13,9 @@
         public int CourseID { get; set; }
         public string CourseName { get; set; }
         public string CourseShortName { get; set; }
-        public int CreditHour { get; set; }
+        public double CreditHour { get; set; }
+        public double Price { get; set; }
+
         public class UpdateUserHandler : ApplicationBase, IRequestHandler<UpdateCourseCommand, bool>
         {
             public UpdateUserHandler(IConfigConstants constant, IMapper mapper, IUnitOfWork unitOfWork)
@@ -32,6 +34,7 @@
                 user.CourseName = request.CourseName;
                 user.CourseShortName = request.CourseShortName;
                 user.CreditHour = request.CreditHour;
+                user.Price = request.Price;
                 this.UnitOfWork.StartTransaction();
                 var res = UnitOfWork.Users.UpdateCourse(user).Result;
                 this.UnitOfWork.Commit();

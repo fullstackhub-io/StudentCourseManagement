@@ -11,25 +11,25 @@ namespace CourseBasket.API.Controllers
     [ApiController]
     public class CoursesBasketController : BaseController
     {
-        [HttpGet("{userName}")]
+        [HttpGet]
         public async Task<ActionResult<BasketCart>> Get(string userName)
         {
             return await this.Mediator.Send(new GetBasketQuery { UserName = userName });
         }
 
-        [HttpPut("[action]")]
+        [HttpPut]
         public async Task<ActionResult<BasketCart>> Put(UpdateBasketCommand command)
         {
             return await this.Mediator.Send(command);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public async Task<ActionResult<bool>> Post(CheckoutBasketCommand command)
         {
             return await this.Mediator.Send(command);
         }
 
-        [HttpDelete("[action]")]
+        [HttpDelete]
         public async Task<ActionResult<bool>> Delete(string userName)
         {
             return await this.Mediator.Send(new DeleteBasketCommand { UserName = userName });

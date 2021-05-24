@@ -3,6 +3,7 @@ export interface ICourse {
     courseName:String,
     courseShortName:String,
     creditHour:number,
+    price:number,
     dateAdded:Date,
     dateUpdated:Date
 }

@@ -16,7 +16,7 @@ import { ManageCourseComponent } from '../manage-course/manage-course.component'
 })
 export class CourseListComponent implements OnInit {
 
-  displayedColumns: string[] = ['courseName', 'courseShortName', 'creditHour', 'edit', 'delete'];
+  displayedColumns: string[] = ['courseName', 'courseShortName', 'creditHour','price', 'edit', 'delete'];
   filteredAndPagedIssues: any = [];
 
   resultsLength: number = 0;

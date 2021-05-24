@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CourseListComponent } from './admin/course/course-list/course-list.component';
 import { UserListComponent } from './admin/user/user-list/user-list.component';
+import { SelectCourseComponent } from './client/select-course/select-course.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
   },
   {
     path:'home',
-    component: UserListComponent
+    component: SelectCourseComponent
   },
   {
     path:'admin/managemenu',

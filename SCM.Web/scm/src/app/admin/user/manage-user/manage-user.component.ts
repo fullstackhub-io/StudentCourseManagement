@@ -70,8 +70,14 @@ export class ManageUserComponent implements OnInit {
     if (this.dbops == DBOperation.delete)
       this.userFrm.disable();
 
-    /*  if (this.dbops == DBOperation.update)
-       this.courseFrm.controls["MenuCode"].disable(); */
+      if (this.dbops == DBOperation.update)
+      {
+       this.userFrm.controls["firstName"].disable();
+       this.userFrm.controls["lastName"].disable();
+       this.userFrm.controls["dob"].disable();
+       this.userFrm.controls["gender"].disable();
+       this.userFrm.controls["emailAddress"].disable();
+      }
 
   }
 

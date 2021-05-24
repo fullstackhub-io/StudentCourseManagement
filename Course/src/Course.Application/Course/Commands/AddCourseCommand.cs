@@ -13,8 +13,8 @@
     {
         public string CourseName { get; set; }
         public string CourseShortName { get; set; }
-        public int CreditHour { get; set; }
-
+        public double CreditHour { get; set; }
+        public double Price { get; set; }
         public class AddNewUserHandler : ApplicationBase, IRequestHandler<AddCourseCommand, int>
         {
             public AddNewUserHandler(IConfigConstants constant, IMapper mapper, IUnitOfWork unitOfWork)
@@ -29,6 +29,7 @@
                     CourseName = request.CourseName,
                     CourseShortName = request.CourseShortName,
                     CreditHour = request.CreditHour,
+                    Price = request.Price,
                 };
                 this.UnitOfWork.StartTransaction();
                 var res = UnitOfWork.Users.AddCourse(user).Result;

@@ -28,7 +28,6 @@ namespace CourseBasket.Application.CoursesBasket.Commands
             public async Task<bool> Handle(CheckoutBasketCommand request, CancellationToken cancellationToken)
             {
                 var eventMessage = this.Mapper.Map<CourseCheckoutEvent>(request.BasketCheckout);
-                //eventMessage.RequestId = System.Guid.NewGuid();
                 try
                 {
                     this.eventBusRabbitMQProducer.PublishCoursesCheckout(Constants.CourseCheckoutQueue, eventMessage);

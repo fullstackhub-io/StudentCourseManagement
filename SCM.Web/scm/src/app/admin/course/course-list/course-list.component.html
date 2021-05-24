@@ -21,6 +21,11 @@
         <td mat-cell *matCellDef="let row">{{row.creditHour}}</td>
       </ng-container>
 
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let row">{{row.price}}</td>
+      </ng-container>
+
       <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let row"><button mat-mini-fab color="primary" (click)="gridaction(2,row)">

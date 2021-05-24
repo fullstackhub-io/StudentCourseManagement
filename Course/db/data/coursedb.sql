@@ -10,6 +10,7 @@ CREATE TABLE [dbo].[Course](
 	[CourseName] [varchar](500) NOT NULL,
 	[CourseShortName] [varchar](20) NULL,
 	[CreditHour] [decimal](18, 2) NOT NULL,
+	[Price] [decimal](18, 2) NOT NULL,
 	[DateAdded] [datetime] NULL,
 	[DateUpdated] [datetime] NULL,
  CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
