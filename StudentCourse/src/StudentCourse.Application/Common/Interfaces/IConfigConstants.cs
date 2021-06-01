@@ -2,7 +2,7 @@
 {
     public interface IConfigConstants
     {
-        string CourseConnection { get; }
+        string StudentCourseConnection { get; }
         string TestFullStackConnection { get; }
         int LongRunningProcessMilliseconds { get; }
         string MSG_USER_NULLUSERID { get; }

@@ -13,7 +13,7 @@
 
     public class AddStudentCourseCommand : IRequest<int>
     {
-        public StudentCourseCommand StudentCourse { get; set; }
+        public StudentCourseDTO StudentCourse { get; set; }
 
         public class AddStudentCourseHandler : ApplicationBase, IRequestHandler<AddStudentCourseCommand, int>
         {
@@ -26,11 +26,10 @@
             {
                 var studentCourse = new StudentCourseEntity
                 {
-                    CourseName = request.StudentCourse.CourseName,
-                    CrouseShortName = request.StudentCourse.CrouseShortName,
-                    CreditHour = request.StudentCourse.CreditHour,
                     FirstName = request.StudentCourse.FirstName,
                     LastName = request.StudentCourse.LastName,
+                    TotalPrice = request.StudentCourse.TotalPrice,
+                    EmailAddress = request.StudentCourse.EmailAddress,
                     PhoneNumber = request.StudentCourse.PhoneNumber,
                     Address = request.StudentCourse.Address,
                     DateAdded = DateTime.Now,

@@ -10,7 +10,7 @@ namespace StudentCourse.Persistence.Constant
         {
             this.Configuration = configuration;
         }
-        public string CourseConnection => this.Configuration.GetConnectionString("StudentCourseConnection");
+        public string StudentCourseConnection => this.Configuration.GetConnectionString("StudentCourseConnection");
 
         public string TestFullStackConnection => this.Configuration.GetConnectionString("TestFullStackConnection");
         public int LongRunningProcessMilliseconds => int.Parse(this.Configuration["AppSettings:LongRunningProcessMilliseconds"]);

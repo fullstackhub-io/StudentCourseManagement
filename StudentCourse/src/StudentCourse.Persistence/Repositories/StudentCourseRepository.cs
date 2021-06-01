@@ -34,7 +34,7 @@
 
         public Task<IEnumerable<StudentCourse>> GetAllStudentCourse()
         {
-            throw new System.NotImplementedException();
+            return DbConnection.GetAllAsync<StudentCourse>();
         }
 
         public Task<StudentCourse> GetStudentCourse(long courseId)

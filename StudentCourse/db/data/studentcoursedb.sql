@@ -5,11 +5,11 @@ GO
 USE [StudentCourses]
 CREATE TABLE [dbo].[StudentCourses](
 	[StudentCourseID] [int] IDENTITY(1,1) NOT NULL,
-	[CourseName] [varchar](500) NOT NULL,
-	[CrouseShortName] [varchar](20) NOT NULL,
-	[CreditHour] [decimal](18, 2) NOT NULL,
+	[Subjects] [varchar](5000) NOT NULL,
+	[TotalPrice] [decimal](18, 2) NOT NULL,
 	[FirstName] [varchar](50) NOT NULL,
 	[LastName] [varchar](50) NOT NULL,
+	[EmailAddress] [varchar](100) NOT NULL,
 	[PhoneNumber] [varchar](20) NOT NULL,
 	[Address] [varchar](500) NOT NULL,
 	[SessionStartDate] [datetime] NOT NULL,

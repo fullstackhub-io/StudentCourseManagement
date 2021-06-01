@@ -1,6 +1,8 @@
 ﻿using Course.Application.User.Commands;
 using Microsoft.AspNetCore.Mvc;
+using StudentCourse.Application.StudentCourse.VM;
 using StudentCourse.Application.User.Commands;
+using StudentCourse.Application.User.Queries;
 using System.Threading.Tasks;
 
 namespace StudentCourse.API.Controllers
@@ -16,11 +18,11 @@ namespace StudentCourse.API.Controllers
         //    return await this.Mediator.Send(new GetSingleCourseQuery { CourseID = (int)id });
         //}
 
-        //[HttpGet]
-        //public async Task<ActionResult<CourseVM>> Get()
-        //{
-        //    return await this.Mediator.Send(new GetAllCourseQuery());
-        //}
+        [HttpGet]
+        public async Task<ActionResult<StudentCourseVM>> Get()
+        {
+            return await this.Mediator.Send(new GetAllStudentCourseQuery());
+        }
 
         [HttpPost]
         public async Task<ActionResult<int>> Post(AddStudentCourseCommand command)

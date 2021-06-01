@@ -1,13 +1,13 @@
-﻿namespace Course.Application.User.Queries
+﻿namespace StudentCourse.Application.User.Queries
 {
     using AutoMapper;
+    using global::StudentCourse.Application.Common.BaseClass;
+    using global::StudentCourse.Application.Common.Interfaces;
+    using global::StudentCourse.Application.StudentCourse.VM;
+    using global::StudentCourse.Domain.UnitOfWork;
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using StudentCourse.Application.StudentCourse.VM;
-    using StudentCourse.Domain.UnitOfWork;
-    using StudentCourse.Application.Common.BaseClass;
-    using StudentCourse.Application.Common.Interfaces;
 
     public class GetSingleStudentCourseQuery : IRequest<StudentCourseVM>
     {

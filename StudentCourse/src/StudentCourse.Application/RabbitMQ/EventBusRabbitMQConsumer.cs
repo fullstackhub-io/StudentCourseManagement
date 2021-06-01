@@ -42,7 +42,7 @@ namespace StudentCourse.Application.RabbitMQ
             {
                 var message = Encoding.UTF8.GetString(e.Body.Span);
                 var basketCheckoutEvent = JsonConvert.DeserializeObject<CourseCheckoutEvent>(message);
-                var command = mapper.Map(basketCheckoutEvent, new StudentCourseCommand());
+                var command = mapper.Map(basketCheckoutEvent, new StudentCourseDTO());
                 var result = await mediator.Send(new AddStudentCourseCommand { StudentCourse = command });
             }
         }

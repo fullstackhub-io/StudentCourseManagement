@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Course.Application\Course.Application.csproj" />
     <ProjectReference Include="..\Course.Persistence\Course.Persistence.csproj" />
   </ItemGroup>
 

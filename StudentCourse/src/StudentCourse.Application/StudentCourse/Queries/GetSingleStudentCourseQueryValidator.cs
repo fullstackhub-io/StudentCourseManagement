@@ -1,7 +1,7 @@
-﻿namespace Course.Application.User.Queries
+﻿namespace StudentCourse.Application.User.Queries
 {
     using FluentValidation;
-    using StudentCourse.Application.Common.Interfaces;
+    using global::StudentCourse.Application.Common.Interfaces;
 
     public class GetSingleStudentCourseQueryValidator : AbstractValidator<GetSingleStudentCourseQuery>
     {
