@@ -2,6 +2,6 @@ import { ICourse } from "./course";
 
 export interface ICourseBasket{
     userEmail: String,
-    totalPrice:number,
+    totalPrice:Number,
     items: ICourse[],
 }

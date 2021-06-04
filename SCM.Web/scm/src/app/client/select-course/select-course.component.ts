@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { merge } from 'rxjs';
 import { startWith, switchMap, map, catchError } from 'rxjs/operators';
+import { IBoughtCourse } from 'src/app/model/BoughtCourses';
 import { ICourse } from 'src/app/model/course';
 import { ICourseBasket } from 'src/app/model/courseBasket';
 import { ICourseBasketVM } from 'src/app/model/courseBasketVM';
@@ -47,6 +48,7 @@ export class SelectCourseComponent implements OnInit {
   courseURL: string = "http://localhost:90/api/Course";
   courseBaskeURL: string = "http://localhost:120/api/CoursesBasket";
   courseGetAllBasketURL: string = "http://localhost:120/api/CoursesBasket/GetAll";
+  coursePurchaseURL: string = "http://localhost:100/api/StudentCourse";
 
   selectCourse!: FormGroup;
 
@@ -121,7 +123,26 @@ export class SelectCourseComponent implements OnInit {
   }
 
   buyCourse(){
-    
+    debugger;
+    let courseBasket:ICourseBasketVM[]=[];
+    let courses:IBoughtCourse[]=[];
+    this._dataService.post(this.courseGetAllBasketURL, this.userEmails).subscribe(res =>
+      {
+        courseBasket = res;
+       courseBasket.forEach(b => courses.push({Address:this.users.find(x=>x.emailAddress==b.userEmail)?.city
+                                                                      +"|"+this.users.find(x=>x.emailAddress==b.userEmail)?.state
+                                                                      +"|"+this.users.find(x=>x.emailAddress==b.userEmail)?.zip
+                                                                      +"|"+this.users.find(x=>x.emailAddress==b.userEmail)?.country??"",
+                                               EmailAddress:b.userEmail,
+                                               FirstName:this.users.find(x=>x.emailAddress==b.userEmail)?.firstName??"",
+                                               LastName:this.users.find(x=>x.emailAddress==b.userEmail)?.lastName??"",
+                                               PhoneNumber:this.users.find(x=>x.emailAddress==b.userEmail)?.phoneNumber??"",
+                                               Subjects:b.subjects,
+                                               TotalPrice:b.totalPrice}))
+       debugger
+       
+        this._dataService.post(this.coursePurchaseURL,courses).subscribe(x=>alert(JSON.stringify(x)));
+      });
   }
 
   resetPaging(): void {

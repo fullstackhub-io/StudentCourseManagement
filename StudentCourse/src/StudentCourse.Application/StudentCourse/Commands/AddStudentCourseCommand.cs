@@ -7,13 +7,20 @@
     using global::StudentCourse.Application.Common.BaseClass;
     using global::StudentCourse.Application.Common.Interfaces;
     using global::StudentCourse.Domain.UnitOfWork;
-    using StudentCourseEntity = global::StudentCourse.Domain.Entities.StudentCourse;
+    using StudentCourseEntity = Domain.Entities.StudentCourse;
     using System;
     using global::StudentCourse.Application.StudentCourse.DTO;
 
     public class AddStudentCourseCommand : IRequest<int>
     {
-        public StudentCourseDTO StudentCourse { get; set; }
+        public System.Collections.Generic.List<StudentCourseDTO> Courses { get; set; }
+        //public string Subjects { get; set; }
+        //public decimal TotalPrice { get; set; }
+        //public string FirstName { get; set; }
+        //public string LastName { get; set; }
+        //public string EmailAddress { get; set; }
+        //public string PhoneNumber { get; set; }
+        //public string Address { get; set; }
 
         public class AddStudentCourseHandler : ApplicationBase, IRequestHandler<AddStudentCourseCommand, int>
         {
@@ -24,22 +31,28 @@
 
             public async Task<int> Handle(AddStudentCourseCommand request, CancellationToken cancellationToken)
             {
-                var studentCourse = new StudentCourseEntity
-                {
-                    FirstName = request.StudentCourse.FirstName,
-                    LastName = request.StudentCourse.LastName,
-                    TotalPrice = request.StudentCourse.TotalPrice,
-                    EmailAddress = request.StudentCourse.EmailAddress,
-                    PhoneNumber = request.StudentCourse.PhoneNumber,
-                    Address = request.StudentCourse.Address,
-                    DateAdded = DateTime.Now,
-                    SessionStartDate = DateTime.Now,
-                    SessionEndDate = DateTime.Now.AddMonths(4),
-                };
+                var result = 0;
+
                 this.UnitOfWork.StartTransaction();
-                var res = UnitOfWork.UserCourse.AddStudentCourse(studentCourse).Result;
+                foreach (var course in request.Courses)
+                {
+                    var studentCourse = new StudentCourseEntity
+                    {
+                        FirstName = course.FirstName,
+                        LastName = course.LastName,
+                        TotalPrice = course.TotalPrice,
+                        EmailAddress = course.EmailAddress,
+                        Subjects = course.Subjects,
+                        PhoneNumber = course.PhoneNumber,
+                        Address = course.Address,
+                        DateAdded = DateTime.Now,
+                        SessionStartDate = DateTime.Now,
+                        SessionEndDate = DateTime.Now.AddMonths(4),
+                    };
+                    result = UnitOfWork.UserCourse.AddStudentCourse(studentCourse).Result;
+                }
                 this.UnitOfWork.Commit();
-                return await Task.Run(() => res, cancellationToken);
+                return await Task.Run(() => result, cancellationToken);
             }
         }
     }

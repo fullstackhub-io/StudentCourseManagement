@@ -7,6 +7,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using StudentCourse.Application.StudentCourse.DTO;
 using StudentCourse.Application.User.Commands;
+using System.Collections.Generic;
 using System.Text;
 
 namespace StudentCourse.Application.RabbitMQ
@@ -42,8 +43,19 @@ namespace StudentCourse.Application.RabbitMQ
             {
                 var message = Encoding.UTF8.GetString(e.Body.Span);
                 var basketCheckoutEvent = JsonConvert.DeserializeObject<CourseCheckoutEvent>(message);
-                var command = mapper.Map(basketCheckoutEvent, new StudentCourseDTO());
-                var result = await mediator.Send(new AddStudentCourseCommand { StudentCourse = command });
+                var command = mapper.Map(basketCheckoutEvent, new List<StudentCourseDTO>());
+                var addStudentCourseCommand = new AddStudentCourseCommand
+                {
+                    //Address = command.Address,
+                    //EmailAddress = command.EmailAddress,
+                    //FirstName = command.FirstName,
+                    //LastName = command.LastName,
+                    //PhoneNumber = command.PhoneNumber,
+                    //Subjects = command.Subjects,
+                    //TotalPrice = command.TotalPrice,
+                    Courses = command
+                };
+                var result = await mediator.Send(addStudentCourseCommand);
             }
         }
 

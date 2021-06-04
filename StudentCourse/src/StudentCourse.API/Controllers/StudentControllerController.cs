@@ -1,8 +1,10 @@
 ﻿using Course.Application.User.Commands;
 using Microsoft.AspNetCore.Mvc;
+using StudentCourse.Application.StudentCourse.DTO;
 using StudentCourse.Application.StudentCourse.VM;
 using StudentCourse.Application.User.Commands;
 using StudentCourse.Application.User.Queries;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace StudentCourse.API.Controllers
@@ -25,9 +27,9 @@ namespace StudentCourse.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<int>> Post(AddStudentCourseCommand command)
+        public async Task<ActionResult<int>> Post(List<StudentCourseDTO> courses)
         {
-            return await this.Mediator.Send(command);
+            return await this.Mediator.Send(new AddStudentCourseCommand() {Courses = courses });
         }
 
         //[HttpPut]

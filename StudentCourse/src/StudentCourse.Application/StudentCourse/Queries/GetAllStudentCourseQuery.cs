@@ -25,7 +25,6 @@
                 var res = Mapper.Map(UnitOfWork.UserCourse.GetAllStudentCourse().Result, new List<StudentCourseDTO>());
                 var rr = new StudentCourseVM() { CourseList = res };
                 return await Task.FromResult(new StudentCourseVM() { CourseList = res });
-                //return await Task.Run(() => res, cancellationToken);
             }
         }
     }
