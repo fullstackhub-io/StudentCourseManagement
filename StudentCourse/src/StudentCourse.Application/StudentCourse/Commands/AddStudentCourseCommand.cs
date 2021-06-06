@@ -10,17 +10,11 @@
     using StudentCourseEntity = Domain.Entities.StudentCourse;
     using System;
     using global::StudentCourse.Application.StudentCourse.DTO;
+    using System.Collections.Generic;
 
     public class AddStudentCourseCommand : IRequest<int>
     {
-        public System.Collections.Generic.List<StudentCourseDTO> Courses { get; set; }
-        //public string Subjects { get; set; }
-        //public decimal TotalPrice { get; set; }
-        //public string FirstName { get; set; }
-        //public string LastName { get; set; }
-        //public string EmailAddress { get; set; }
-        //public string PhoneNumber { get; set; }
-        //public string Address { get; set; }
+       public List<StudentCourseDTO> Courses { get; set; }
 
         public class AddStudentCourseHandler : ApplicationBase, IRequestHandler<AddStudentCourseCommand, int>
         {

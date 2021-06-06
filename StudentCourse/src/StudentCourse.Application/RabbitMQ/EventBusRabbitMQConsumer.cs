@@ -42,20 +42,9 @@ namespace StudentCourse.Application.RabbitMQ
             if (e.RoutingKey == EventBusRabbitMQ.Common.Constants.CourseCheckoutQueue)
             {
                 var message = Encoding.UTF8.GetString(e.Body.Span);
-                var basketCheckoutEvent = JsonConvert.DeserializeObject<CourseCheckoutEvent>(message);
+                var basketCheckoutEvent = JsonConvert.DeserializeObject<List<CourseCheckoutEvent>>(message);
                 var command = mapper.Map(basketCheckoutEvent, new List<StudentCourseDTO>());
-                var addStudentCourseCommand = new AddStudentCourseCommand
-                {
-                    //Address = command.Address,
-                    //EmailAddress = command.EmailAddress,
-                    //FirstName = command.FirstName,
-                    //LastName = command.LastName,
-                    //PhoneNumber = command.PhoneNumber,
-                    //Subjects = command.Subjects,
-                    //TotalPrice = command.TotalPrice,
-                    Courses = command
-                };
-                var result = await mediator.Send(addStudentCourseCommand);
+                var result = await mediator.Send(new AddStudentCourseCommand() {Courses = command });
             }
         }
 

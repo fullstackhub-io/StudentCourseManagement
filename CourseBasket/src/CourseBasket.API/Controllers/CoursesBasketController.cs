@@ -1,4 +1,5 @@
 ﻿using CourseBasket.Application.CoursesBasket.Commands;
+using CourseBasket.Application.CoursesBasket.DTO;
 using CourseBasket.Application.CoursesBasket.VM;
 using CourseBasket.Domain.Entities;
 using CoursesBasket.API.Controllers;
@@ -32,9 +33,9 @@ namespace CourseBasket.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<bool>> Post(CheckoutBasketCommand command)
+        public async Task<ActionResult<bool>> Post(List<BasketCheckoutDTO> basketCheckout)
         {
-            return await this.Mediator.Send(command);
+            return await this.Mediator.Send(new CheckoutBasketCommand() { BasketCheckoutDTO = basketCheckout });
         }
 
         [HttpDelete("{userName}")]

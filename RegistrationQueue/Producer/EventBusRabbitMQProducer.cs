@@ -2,6 +2,7 @@
 using EventBusRabbitMQ.RabbitMQConnection;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
+using System.Collections.Generic;
 using System.Text;
 
 namespace EventBusRabbitMQ.Producer
@@ -15,7 +16,7 @@ namespace EventBusRabbitMQ.Producer
             this.connection = connection;
         }
 
-        public void PublishCoursesCheckout(string queueName, CourseCheckoutEvent publishModel)
+        public void PublishCoursesCheckout(string queueName, List<CourseCheckoutEvent> publishModel)
         {
             using var channel = this.connection.CreateModel();
             channel.QueueDeclare(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);

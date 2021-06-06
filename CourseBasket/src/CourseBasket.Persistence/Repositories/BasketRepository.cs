@@ -64,7 +64,7 @@ namespace CourseBasket.Persistence.Repositories
             return await Task.Run(() => true);
         }
 
-        public Task<bool> CheckoutBasket(CourseCheckoutEvent coursesCheckoutEvent)
+        public Task<bool> CheckoutBasket(List<CourseCheckoutEvent> coursesCheckoutEvent)
         {
             this.eventBusRabbitMQProducer.PublishCoursesCheckout(Constants.CourseCheckoutQueue, coursesCheckoutEvent);
             return Task.Run(() => true);

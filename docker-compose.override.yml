@@ -23,6 +23,7 @@ services:
      - userdbsqldata:/var/opt/mssql
 
   course.api:
+    container_name: courseapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -31,6 +32,7 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
   user.api:
+    container_name: userapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -85,7 +87,7 @@ services:
             - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
             - ${HOME}/.aspnet/https:/root/.aspnet/https:oc
         ports:
-            - "110:80"
+            - "130:80"
 
   coursebasket.api:
         container_name: coursebasketapi

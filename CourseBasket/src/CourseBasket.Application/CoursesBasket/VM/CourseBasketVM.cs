@@ -13,7 +13,6 @@
 
         public void Mapping(Profile profile)
         {
-            //profile.CreateMap<CourseBasketVM, BasketCart>();
             profile.CreateMap<BasketCart, CourseBasketVM>()
                 .ForMember(d => d.Subjects, e => e.MapFrom(s => string.Join(",", s.Items.Select(x => x.CourseName).ToArray())));
         }

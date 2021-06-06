@@ -48,7 +48,7 @@ export class SelectCourseComponent implements OnInit {
   courseURL: string = "http://localhost:90/api/Course";
   courseBaskeURL: string = "http://localhost:120/api/CoursesBasket";
   courseGetAllBasketURL: string = "http://localhost:120/api/CoursesBasket/GetAll";
-  coursePurchaseURL: string = "http://localhost:100/api/StudentCourse";
+  coursePurchaseURL: string = "http://localhost:120/api/CoursesBasket";
 
   selectCourse!: FormGroup;
 

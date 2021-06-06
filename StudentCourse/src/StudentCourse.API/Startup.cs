@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using StudentCourse.Application;
+using StudentCourse.Application.RabbitMQ;
 using StudentCourse.Persistence;
 
 namespace StudentCourse.API
@@ -50,7 +51,7 @@ namespace StudentCourse.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "StudentCourse.API v1"));
             }
-
+            app.UseRabbitListener();
             app.UseRouting();
             app.UseCors("AllowOrigin");
             app.UseAuthorization();

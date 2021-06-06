@@ -12,6 +12,6 @@ namespace CourseBasket.Domain.Repositories
         Task<bool> UpdateBasket(BasketCart basket);
         Task<bool> DeleteBasket(string userName);
 
-        Task<bool> CheckoutBasket(CourseCheckoutEvent coursesCheckoutEvent);
+        Task<bool> CheckoutBasket(List<CourseCheckoutEvent> coursesCheckoutEvent);
     }
 }
