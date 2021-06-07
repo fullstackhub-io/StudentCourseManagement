@@ -7,7 +7,7 @@ namespace StudentCourse.Domain.Repositories
     {
         Task<int> AddStudentCourse(StudentCourseEntity course);
         Task<bool> UpdateStudentCourse(StudentCourseEntity course);
-        Task<bool> DeleteStudentCourse(int courseId);
+        Task<bool> DeleteStudentCourse(int studentCourseId);
         Task<IEnumerable<StudentCourseEntity>> GetAllStudentCourse();
         Task<StudentCourseEntity> GetStudentCourse(long studentCourseId);
         Task<bool> DeleteAllStudentCourse();

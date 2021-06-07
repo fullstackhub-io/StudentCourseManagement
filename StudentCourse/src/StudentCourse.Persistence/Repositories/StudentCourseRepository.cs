@@ -27,9 +27,9 @@
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> DeleteStudentCourse(int courseId)
+        public Task<bool> DeleteStudentCourse(int studentCourseId)
         {
-            throw new System.NotImplementedException();
+            return DbConnection.DeleteAsync(new StudentCourse { StudentCourseID = studentCourseId }, DbTransaction);
         }
 
         public Task<IEnumerable<StudentCourse>> GetAllStudentCourse()

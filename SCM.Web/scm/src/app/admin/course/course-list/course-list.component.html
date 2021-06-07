@@ -1,6 +1,7 @@
 <div class="example-container mat-elevation-z8">
 <div class="div-spacing">
   <button mat-raised-button color="primary" (click)="gridaction(1,null)">Add New Course</button>
+  <button [routerLink]="['../../home']" mat-button color="primary"><i class="material-icons">home</i>    Back to Home</button>
 </div>
   <div class="example-table-container">
     <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort matSortActive="created"

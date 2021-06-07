@@ -1,18 +1,34 @@
 <div>
-    <mat-card>
-      <mat-card-header class="header">
-        <mat-card-title class="header_title"><i class="material-icons">security</i> Manage Site Content</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="card_cntnt">
+  <div><img src="assets/images/banner.jpg" style="height: 400px;"></div>
+  <mat-card>
+    <mat-card-header class="header">
+      <mat-card-title class="header_title"><i class="material-icons">security</i>Admin - Manage Site Content</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card_cntnt">
+      <div>
         <div>
-          <div>
-            <button [routerLink]="['managemenu']" mat-button color="primary"><i class="material-icons">menu</i>    Course Management</button>
-          </div>
-          <hr>
-          <div>
-            <button [routerLink]="['usermsg']" mat-button color="primary"><i class="material-icons">user</i>    User Management</button>
-          </div>
+          <button [routerLink]="['manageuser']" mat-button color="primary"><i class="material-icons">emoji_people</i>    User Management</button>
         </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
+        <hr>
+        <div>
+          <button [routerLink]="['managecourse']" mat-button color="primary"><i class="material-icons">book</i>    Course Management</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div>
+  <mat-card>
+    <mat-card-header class="header">
+      <mat-card-title class="header_title"><i class="material-icons">manage_accounts</i>Client - Buy User Course</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card_cntnt">
+      <div>
+        <div>
+          <button [routerLink]="['usercourse']" mat-button color="primary"><i class="material-icons">emoji_people</i><i class="material-icons">book</i>    User Course Management</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,74 @@
+mat-card
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+mat-card-noshadow{ 
+    background: #ECECF4;
+    box-shadow: none !important;
+}
+
+mat-card-content{
+  margin: 0px;
+  padding: 0px;
+}
+
+.header
+{
+background: #E90C0C;
+border-bottom: 5px solid #790606;
+height: 50px;
+padding-left: 5px;
+}
+
+.subheader
+{
+height: 40px;
+background: #5B5C60;
+}
+
+.subheader_title{
+    vertical-align:baseline;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    font-size: 13pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #C8CCD2;
+}
+
+.header_title{
+    vertical-align:baseline;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+
+.card_cntnt
+{
+    padding: 15px;
+    padding-bottom: 15px;
+}
+
+.card_footer
+{
+    text-align: left;
+    padding-left: 40px;
+}
+
+.frm-ctrl {
+    width: 90%;
+}
+
+.icon_align
+{
+    vertical-align: middle;
+}
+.phone_cntnt
+{
+    font-weight: bold;
+}
