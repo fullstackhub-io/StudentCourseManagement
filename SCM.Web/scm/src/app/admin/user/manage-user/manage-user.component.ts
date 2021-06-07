@@ -22,9 +22,8 @@ export class ManageUserComponent implements OnInit {
   user!: IUser;
 
   userFrm!: FormGroup;
-  POST_URL: string = "http://localhost/api/User";
-  RST_URL: string = "http://localhost/api/User/id";
-  GET_ALL_URL: string = "http://localhost/api/User"
+  POST_URL: string = "http://localhost:130/User";
+  RST_URL: string = "http://localhost:130/User/id";
 
   constructor(private _fb: FormBuilder, private _dataService: DataService, private _util: Util, public dialogRef: MatDialogRef<ManageUserComponent>) { }
 

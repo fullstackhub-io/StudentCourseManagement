@@ -21,6 +21,17 @@ namespace CMAPIGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOcelot();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    name: "AllowOrigin",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,7 +43,7 @@ namespace CMAPIGateway
             }
 
             app.UseRouting();
-
+            app.UseCors("AllowOrigin");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -47,6 +47,42 @@
       ],
       "UpstreamPathTemplate": "/user",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CoursesBasket/GetAll",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "coursebasketapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/CoursesBasket/GetAll",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CoursesBasket",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "coursebasketapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/CoursesBasket/{userName}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CoursesBasket",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "coursebasketapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/CoursesBasket",
+      "UpstreamHttpMethod": [ "POST", "PUT" ]
     }
   ]
 }

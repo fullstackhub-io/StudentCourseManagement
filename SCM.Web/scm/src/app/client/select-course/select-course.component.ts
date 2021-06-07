@@ -44,11 +44,11 @@ export class SelectCourseComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  userURL: string = "http://localhost/api/User";
-  courseURL: string = "http://localhost:90/api/Course";
-  courseBaskeURL: string = "http://localhost:120/api/CoursesBasket";
-  courseGetAllBasketURL: string = "http://localhost:120/api/CoursesBasket/GetAll";
-  coursePurchaseURL: string = "http://localhost:120/api/CoursesBasket";
+  userURL: string = "http://localhost:130/User";
+  courseURL: string = "http://localhost:130/Course";
+  courseBaskeURL: string = "http://localhost:130/CoursesBasket";
+  courseGetAllBasketURL: string = "http://localhost:130/CoursesBasket/GetAll";
+  coursePurchaseURL: string = "http://localhost:130/CoursesBasket";
 
   selectCourse!: FormGroup;
 

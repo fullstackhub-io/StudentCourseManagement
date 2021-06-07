@@ -20,7 +20,7 @@ namespace CourseBasket.API.Controllers
             return await this.Mediator.Send(new GetAllItemBasketQuery { UserNames = userNames });
         }
 
-        [HttpGet]
+        [HttpGet("{userName}")]
         public async Task<ActionResult<BasketCart>> Get(string userName)
         {
             return await this.Mediator.Send(new GetBasketQuery { UserName = userName });

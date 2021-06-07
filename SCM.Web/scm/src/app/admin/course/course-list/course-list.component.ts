@@ -28,7 +28,7 @@ export class CourseListComponent implements OnInit {
   modalBtnTitle!: string;
   course:any;
 
-  GET_URL:string = "http://localhost:90/api/Course";
+  GET_URL:string = "http://localhost:130/Course";
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;

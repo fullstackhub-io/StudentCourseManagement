@@ -20,9 +20,8 @@ export class ManageCourseComponent implements OnInit {
   course!: ICourse;
 
   courseFrm!: FormGroup;
-  POST_URL: string = "http://localhost:90/api/Course";
-  RST_URL: string = "http://localhost:90/api/Course/id";
-  GET_ALL_URL: string = "http://localhost:90/api/Course"
+  POST_URL: string = "http://localhost:130/Course";
+  RST_URL: string = "http://localhost:130/Course/id";
 
   constructor(private _fb: FormBuilder, private _dataService: DataService, private _util: Util, public dialogRef: MatDialogRef<ManageCourseComponent>) { }
 

@@ -33,7 +33,8 @@ namespace CourseBasket.API
             {
                 options.AddPolicy(
                     name: "AllowOrigin",
-                    builder => {
+                    builder =>
+                    {
                         builder.AllowAnyOrigin()
                                 .AllowAnyMethod()
                                 .AllowAnyHeader();

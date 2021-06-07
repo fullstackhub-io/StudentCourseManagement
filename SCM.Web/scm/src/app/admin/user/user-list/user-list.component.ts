@@ -41,7 +41,7 @@ export class UserListComponent implements OnInit {
   modalBtnTitle!: string;
   user:any;
 
-  GET_URL:string = "http://localhost/api/User";
+  GET_URL:string = "http://localhost:130/User";
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;

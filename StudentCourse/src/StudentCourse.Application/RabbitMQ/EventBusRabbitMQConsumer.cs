@@ -1,17 +1,18 @@
-﻿using AutoMapper;
-using EventBusRabbitMQ.Events;
-using EventBusRabbitMQ.RabbitMQConnection;
-using MediatR;
-using Newtonsoft.Json;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using StudentCourse.Application.StudentCourse.DTO;
-using StudentCourse.Application.User.Commands;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace StudentCourse.Application.RabbitMQ
 {
+    using AutoMapper;
+    using EventBusRabbitMQ.Events;
+    using EventBusRabbitMQ.RabbitMQConnection;
+    using global::RabbitMQ.Client;
+    using global::RabbitMQ.Client.Events;
+    using global::StudentCourse.Application.StudentCourse.DTO;
+    using global::StudentCourse.Application.User.Commands;
+    using MediatR;
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class EventBusRabbitMQConsumer
     {
         private readonly IRabbitMQConnection connection;

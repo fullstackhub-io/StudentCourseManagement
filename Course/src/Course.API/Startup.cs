@@ -28,17 +28,6 @@ namespace Course.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Course.API", Version = "v1" });
             });
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(
-                    name: "AllowOrigin",
-                    builder => {
-                        builder.AllowAnyOrigin()
-                                .AllowAnyMethod()
-                                .AllowAnyHeader();
-                    });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,8 +41,7 @@ namespace Course.API
             }
 
             app.UseRouting();
-           app.UseCors("AllowOrigin");
-        app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
