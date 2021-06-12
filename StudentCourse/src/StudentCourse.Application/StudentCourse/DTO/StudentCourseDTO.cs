@@ -2,10 +2,11 @@
 using System;
 using StudentCourse.Application.Common.Mappings;
 using StudentCourseEntity = StudentCourse.Domain.Entities.StudentCourse;
+using EventBusRabbitMQ.Events;
 
 namespace StudentCourse.Application.StudentCourse.DTO
 {
-    public class StudentCourseDTO : IMapFrom<StudentCourseEntity>
+    public class StudentCourseDTO : IMapFrom<StudentCourseEntity>, IMapFrom<CourseCheckoutEvent>
     {
         public int StudentCourseID { get; set; }
         public string Subjects { get; set; }
@@ -27,6 +28,9 @@ namespace StudentCourse.Application.StudentCourse.DTO
         {
             profile.CreateMap<StudentCourseDTO, StudentCourseEntity>();
             profile.CreateMap<StudentCourseEntity, StudentCourseDTO>();
+
+            profile.CreateMap<StudentCourseDTO, CourseCheckoutEvent>();
+            profile.CreateMap<CourseCheckoutEvent, StudentCourseDTO>();
         }
     }
 }

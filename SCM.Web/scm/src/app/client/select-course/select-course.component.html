@@ -51,7 +51,7 @@
   
         <ng-container matColumnDef="totalPrice">
           <th mat-header-cell *matHeaderCellDef>Total Price</th>
-          <td mat-cell *matCellDef="let row">{{row.totalPrice}}</td>
+          <td mat-cell *matCellDef="let row">{{row.totalPrice | currency}}</td>
         </ng-container>
   
         <ng-container matColumnDef="delete">

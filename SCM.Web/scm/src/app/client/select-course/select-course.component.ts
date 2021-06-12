@@ -139,9 +139,8 @@ export class SelectCourseComponent implements OnInit {
                                                PhoneNumber:this.users.find(x=>x.emailAddress==b.userEmail)?.phoneNumber??"",
                                                Subjects:b.subjects,
                                                TotalPrice:b.totalPrice}))
-       debugger
        
-        this._dataService.post(this.coursePurchaseURL,courses).subscribe(x=>alert(JSON.stringify(x)));
+        this._dataService.post(this.coursePurchaseURL,courses).subscribe(x=> this._util.openSnackBar("Sending Order..",ResponseSnackbar.Pending));
       });
   }
 
