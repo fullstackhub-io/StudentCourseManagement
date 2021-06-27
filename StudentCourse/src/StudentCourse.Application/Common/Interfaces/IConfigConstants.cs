@@ -5,16 +5,10 @@
         string StudentCourseConnection { get; }
         string TestFullStackConnection { get; }
         int LongRunningProcessMilliseconds { get; }
-        string MSG_USER_NULLUSERID { get; }
-        string MSG_USER_NULLFIRSTNAME { get; }
-        string MSG_USER_NULLLASTNAME { get; }
-        string MSG_USER_NULLDOB { get; }
-        string MSG_USER_NULLGENDER { get; }
-        string MSG_USER_GENDER_LEN { get; }
-        string MSG_USER_NULLEMAILADDR { get; }
-        string MSG_USER_NULLPHNUM { get; }
-        string MSG_USER_NULLCITY { get; }
-        string MSG_USER_NULLSTATE { get; }
-        string MSG_USER_NULLCOUNTRY { get; }
+        string MSG_COURSE_COURSENAME { get; }
+        string MSG_COURSE_NULLCREDITHOUR { get; }
+        string MSG_COURSE_COURSEID { get; }
+
+        string MSG_SC_NULLStdCourseID { get; }
     }
 }

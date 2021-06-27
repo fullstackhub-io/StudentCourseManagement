@@ -6,7 +6,7 @@
     {
         public GetSingleCourseQueryValidator(IConfigConstants constant)
         {
-            this.RuleFor(v => v.CourseID).GreaterThan(0).WithMessage(constant.MSG_USER_NULLUSERID);
+            this.RuleFor(v => v.CourseID).GreaterThan(0).WithMessage(constant.MSG_COURSE_COURSEID);
         }
     }
 }

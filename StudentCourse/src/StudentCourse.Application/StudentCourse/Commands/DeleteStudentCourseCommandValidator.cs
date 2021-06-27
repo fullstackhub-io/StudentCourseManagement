@@ -7,7 +7,7 @@
     {
         public DeleteStudentCourseCommandValidator(IConfigConstants constant)
         {
-            this.RuleFor(v => v.StudentCourseID).GreaterThan(0).WithMessage(constant.MSG_USER_NULLUSERID);
+            this.RuleFor(v => v.StudentCourseID).GreaterThan(0).WithMessage(constant.MSG_SC_NULLStdCourseID);
         }
     }
 }
