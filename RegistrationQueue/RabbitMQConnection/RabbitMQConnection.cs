@@ -40,7 +40,7 @@ namespace EventBusRabbitMQ.RabbitMQConnection
             }
             catch (BrokerUnreachableException)
             {
-                Thread.Sleep(2000);
+                Thread.Sleep(4000);
                 connection = this.connectionFactory.CreateConnection();
             }
 

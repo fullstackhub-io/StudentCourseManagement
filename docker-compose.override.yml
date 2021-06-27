@@ -104,6 +104,12 @@ services:
         ports:
             - "120:80"
 
+  scm.web:
+    container_name: scmweb
+    ports:
+       - "8000:80"
+
+
 volumes:
   coursedbsqldata:
   userdbsqldata:

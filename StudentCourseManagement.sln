@@ -96,6 +96,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scm", "scm", "{97201CE4-86E
 	ProjectSection(SolutionItems) = preProject
 		SCM.Web\scm\.browserslistrc = SCM.Web\scm\.browserslistrc
 		SCM.Web\scm\.editorconfig = SCM.Web\scm\.editorconfig
+		.editorconfig = .editorconfig
 		SCM.Web\scm\.gitignore = SCM.Web\scm\.gitignore
 		SCM.Web\scm\angular.json = SCM.Web\scm\angular.json
 		SCM.Web\scm\Dockerfile = SCM.Web\scm\Dockerfile

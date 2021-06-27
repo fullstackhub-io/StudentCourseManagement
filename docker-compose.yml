@@ -52,4 +52,8 @@ services:
       context: .
       dockerfile: APIGateway/CMAPIGateway/Dockerfile
 
-
+  scm.web:
+    image: ${DOCKER_REGISTRY-}scmweb
+    build:
+      context: .
+      dockerfile: SCM.web/scm/Dockerfile
