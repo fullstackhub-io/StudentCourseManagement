@@ -107,7 +107,7 @@ services:
   scm.web:
     container_name: scmweb
     ports:
-       - "8000:80"
+       - "150:80"
 
 
 volumes:
