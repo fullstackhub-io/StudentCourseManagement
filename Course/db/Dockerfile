@@ -1,4 +1,4 @@
-FROM microsoft/mssql-server-linux
+FROM mcr.microsoft.com/mssql/server:2017-CU24-ubuntu-16.04
 COPY ./Course/db/data /
 RUN chmod +x ./SqlCmdStartup.sh
 CMD /bin/bash ./entrypoint.sh 
