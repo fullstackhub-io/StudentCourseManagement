@@ -13,3 +13,7 @@ and developed for educational purposes only.
 
 1. Clone the master repository to a local drive, build and run the solution. 
 2. Front App URL: http://localhost:150
+
+## View the Brief Article
+
+https://fullstackhub.io/asp-net-core-microservices-with-angular11/
